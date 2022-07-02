@@ -24,6 +24,7 @@
 #include "led.h"
 #include "timer.h"
 #include "usart.h"
+#include "SEGGER_RTT.h"
 
 int main(void)
 {
@@ -39,10 +40,14 @@ int main(void)
   MX_TIM2_Init();
   MX_USART1_Init();
   
+  int cnt = 0;
   /* Infinite loop */
   while (1)
   {
-
+    SEGGER_RTT_printf(0,"cnt=%d\r\n",cnt);
+    HAL_Delay(1000);
+    cnt ++;
+    if(cnt == 10) break;
   }
 }
 
