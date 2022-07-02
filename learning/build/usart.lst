@@ -1,0 +1,172 @@
+ARM GAS  C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usart.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.MX_USART1_Init,"ax",%progbits
+  20              		.align	1
+  21              		.global	MX_USART1_Init
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	MX_USART1_Init:
+  27              	.LFB130:
+  28              		.file 1 "Core/Src/usart.c"
+   1:Core/Src/usart.c **** #include "usart.h"
+   2:Core/Src/usart.c **** 
+   3:Core/Src/usart.c **** 
+   4:Core/Src/usart.c **** /**
+   5:Core/Src/usart.c ****   * @brief USART1 Initialization Function
+   6:Core/Src/usart.c ****   * @param None
+   7:Core/Src/usart.c ****   * @retval None
+   8:Core/Src/usart.c ****   */
+   9:Core/Src/usart.c **** 
+  10:Core/Src/usart.c **** USART_HandleTypeDef husart1;
+  11:Core/Src/usart.c **** 
+  12:Core/Src/usart.c **** void MX_USART1_Init(void)
+  13:Core/Src/usart.c **** {
+  29              		.loc 1 13 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  14:Core/Src/usart.c **** 
+  15:Core/Src/usart.c ****   /* USER CODE BEGIN USART1_Init 0 */
+  16:Core/Src/usart.c **** 
+  17:Core/Src/usart.c ****   /* USER CODE END USART1_Init 0 */
+  18:Core/Src/usart.c **** 
+  19:Core/Src/usart.c ****   /* USER CODE BEGIN USART1_Init 1 */
+  20:Core/Src/usart.c **** 
+  21:Core/Src/usart.c ****   /* USER CODE END USART1_Init 1 */
+ARM GAS  C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s 			page 2
+
+
+  22:Core/Src/usart.c ****   husart1.Instance = USART1;
+  38              		.loc 1 22 3 view .LVU1
+  39              		.loc 1 22 20 is_stmt 0 view .LVU2
+  40 0002 0B48     		ldr	r0, .L5
+  41 0004 0B4B     		ldr	r3, .L5+4
+  42 0006 0360     		str	r3, [r0]
+  23:Core/Src/usart.c ****   husart1.Init.BaudRate = 115200;
+  43              		.loc 1 23 3 is_stmt 1 view .LVU3
+  44              		.loc 1 23 25 is_stmt 0 view .LVU4
+  45 0008 4FF4E133 		mov	r3, #115200
+  46 000c 4360     		str	r3, [r0, #4]
+  24:Core/Src/usart.c ****   husart1.Init.WordLength = USART_WORDLENGTH_8B;
+  47              		.loc 1 24 3 is_stmt 1 view .LVU5
+  48              		.loc 1 24 27 is_stmt 0 view .LVU6
+  49 000e 0023     		movs	r3, #0
+  50 0010 8360     		str	r3, [r0, #8]
+  25:Core/Src/usart.c ****   husart1.Init.StopBits = USART_STOPBITS_1;
+  51              		.loc 1 25 3 is_stmt 1 view .LVU7
+  52              		.loc 1 25 25 is_stmt 0 view .LVU8
+  53 0012 C360     		str	r3, [r0, #12]
+  26:Core/Src/usart.c ****   husart1.Init.Parity = USART_PARITY_NONE;
+  54              		.loc 1 26 3 is_stmt 1 view .LVU9
+  55              		.loc 1 26 23 is_stmt 0 view .LVU10
+  56 0014 0361     		str	r3, [r0, #16]
+  27:Core/Src/usart.c ****   husart1.Init.Mode = USART_MODE_TX_RX;
+  57              		.loc 1 27 3 is_stmt 1 view .LVU11
+  58              		.loc 1 27 21 is_stmt 0 view .LVU12
+  59 0016 0C22     		movs	r2, #12
+  60 0018 4261     		str	r2, [r0, #20]
+  28:Core/Src/usart.c ****   husart1.Init.CLKPolarity = USART_POLARITY_LOW;
+  61              		.loc 1 28 3 is_stmt 1 view .LVU13
+  62              		.loc 1 28 28 is_stmt 0 view .LVU14
+  63 001a 8361     		str	r3, [r0, #24]
+  29:Core/Src/usart.c ****   husart1.Init.CLKPhase = USART_PHASE_1EDGE;
+  64              		.loc 1 29 3 is_stmt 1 view .LVU15
+  65              		.loc 1 29 25 is_stmt 0 view .LVU16
+  66 001c C361     		str	r3, [r0, #28]
+  30:Core/Src/usart.c ****   husart1.Init.CLKLastBit = USART_LASTBIT_DISABLE;
+  67              		.loc 1 30 3 is_stmt 1 view .LVU17
+  68              		.loc 1 30 27 is_stmt 0 view .LVU18
+  69 001e 0362     		str	r3, [r0, #32]
+  31:Core/Src/usart.c ****   if (HAL_USART_Init(&husart1) != HAL_OK)
+  70              		.loc 1 31 3 is_stmt 1 view .LVU19
+  71              		.loc 1 31 7 is_stmt 0 view .LVU20
+  72 0020 FFF7FEFF 		bl	HAL_USART_Init
+  73              	.LVL0:
+  74              		.loc 1 31 6 view .LVU21
+  75 0024 00B9     		cbnz	r0, .L4
+  76              	.L1:
+  32:Core/Src/usart.c ****   {
+  33:Core/Src/usart.c ****     Error_Handler();
+  34:Core/Src/usart.c ****   }
+  35:Core/Src/usart.c ****   /* USER CODE BEGIN USART1_Init 2 */
+  36:Core/Src/usart.c **** 
+  37:Core/Src/usart.c ****   /* USER CODE END USART1_Init 2 */
+  38:Core/Src/usart.c **** 
+  39:Core/Src/usart.c **** }...
+ARM GAS  C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s 			page 3
+
+
+  77              		.loc 1 39 1 view .LVU22
+  78 0026 08BD     		pop	{r3, pc}
+  79              	.L4:
+  33:Core/Src/usart.c ****     Error_Handler();
+  80              		.loc 1 33 5 is_stmt 1 view .LVU23
+  81 0028 FFF7FEFF 		bl	Error_Handler
+  82              	.LVL1:
+  83              		.loc 1 39 1 is_stmt 0 view .LVU24
+  84 002c FBE7     		b	.L1
+  85              	.L6:
+  86 002e 00BF     		.align	2
+  87              	.L5:
+  88 0030 00000000 		.word	.LANCHOR0
+  89 0034 00100140 		.word	1073811456
+  90              		.cfi_endproc
+  91              	.LFE130:
+  93              		.global	husart1
+  94              		.section	.bss.husart1,"aw",%nobits
+  95              		.align	2
+  96              		.set	.LANCHOR0,. + 0
+  99              	husart1:
+ 100 0000 00000000 		.space	68
+ 100      00000000 
+ 100      00000000 
+ 100      00000000 
+ 100      00000000 
+ 101              		.text
+ 102              	.Letext0:
+ 103              		.file 2 "d:\\gun arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\machine\\_default_typ
+ 104              		.file 3 "d:\\gun arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 105              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h"
+ 106              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 107              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 108              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h"
+ 109              		.file 8 "Core/Inc/main.h"
+ARM GAS  C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usart.c
+C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s:20     .text.MX_USART1_Init:00000000 $t
+C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s:26     .text.MX_USART1_Init:00000000 MX_USART1_Init
+C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s:88     .text.MX_USART1_Init:00000030 $d
+C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s:99     .bss.husart1:00000000 husart1
+C:\Users\hh\AppData\Local\Temp\cc8e7Yvh.s:95     .bss.husart1:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_USART_Init
+Error_Handler
