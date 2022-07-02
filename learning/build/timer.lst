@@ -1,0 +1,238 @@
+ARM GAS  C:\Users\hh\AppData\Local\Temp\ccjNC21n.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"timer.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.MX_TIM2_Init,"ax",%progbits
+  20              		.align	1
+  21              		.global	MX_TIM2_Init
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	MX_TIM2_Init:
+  27              	.LFB130:
+  28              		.file 1 "Core/Src/timer.c"
+   1:Core/Src/timer.c **** #include "timer.h"
+   2:Core/Src/timer.c **** 
+   3:Core/Src/timer.c **** /**
+   4:Core/Src/timer.c ****   * @brief TIM2 Initialization Function
+   5:Core/Src/timer.c ****   * @param None
+   6:Core/Src/timer.c ****   * @retval None
+   7:Core/Src/timer.c ****   */
+   8:Core/Src/timer.c **** 
+   9:Core/Src/timer.c **** TIM_HandleTypeDef htim2;
+  10:Core/Src/timer.c **** 
+  11:Core/Src/timer.c **** void MX_TIM2_Init(void)
+  12:Core/Src/timer.c **** {
+  29              		.loc 1 12 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 24
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 87B0     		sub	sp, sp, #28
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 32
+  13:Core/Src/timer.c **** 
+  14:Core/Src/timer.c ****   /* USER CODE BEGIN TIM2_Init 0 */
+  15:Core/Src/timer.c **** 
+  16:Core/Src/timer.c ****   /* USER CODE END TIM2_Init 0 */
+  17:Core/Src/timer.c **** 
+  18:Core/Src/timer.c ****   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  40              		.loc 1 18 3 view .LVU1
+ARM GAS  C:\Users\hh\AppData\Local\Temp\ccjNC21n.s 			page 2
+
+
+  41              		.loc 1 18 26 is_stmt 0 view .LVU2
+  42 0004 0023     		movs	r3, #0
+  43 0006 0293     		str	r3, [sp, #8]
+  44 0008 0393     		str	r3, [sp, #12]
+  45 000a 0493     		str	r3, [sp, #16]
+  46 000c 0593     		str	r3, [sp, #20]
+  19:Core/Src/timer.c ****   TIM_MasterConfigTypeDef sMasterConfig = {0};
+  47              		.loc 1 19 3 is_stmt 1 view .LVU3
+  48              		.loc 1 19 27 is_stmt 0 view .LVU4
+  49 000e 0093     		str	r3, [sp]
+  50 0010 0193     		str	r3, [sp, #4]
+  20:Core/Src/timer.c **** 
+  21:Core/Src/timer.c ****   /* USER CODE BEGIN TIM2_Init 1 */
+  22:Core/Src/timer.c **** 
+  23:Core/Src/timer.c ****   /* USER CODE END TIM2_Init 1 */
+  24:Core/Src/timer.c ****   htim2.Instance = TIM2;
+  51              		.loc 1 24 3 is_stmt 1 view .LVU5
+  52              		.loc 1 24 18 is_stmt 0 view .LVU6
+  53 0012 1648     		ldr	r0, .L9
+  54 0014 4FF08042 		mov	r2, #1073741824
+  55 0018 0260     		str	r2, [r0]
+  25:Core/Src/timer.c ****   htim2.Init.Prescaler = 7999;
+  56              		.loc 1 25 3 is_stmt 1 view .LVU7
+  57              		.loc 1 25 24 is_stmt 0 view .LVU8
+  58 001a 41F63F72 		movw	r2, #7999
+  59 001e 4260     		str	r2, [r0, #4]
+  26:Core/Src/timer.c ****   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  60              		.loc 1 26 3 is_stmt 1 view .LVU9
+  61              		.loc 1 26 26 is_stmt 0 view .LVU10
+  62 0020 8360     		str	r3, [r0, #8]
+  27:Core/Src/timer.c ****   htim2.Init.Period = 9999;
+  63              		.loc 1 27 3 is_stmt 1 view .LVU11
+  64              		.loc 1 27 21 is_stmt 0 view .LVU12
+  65 0022 42F20F72 		movw	r2, #9999
+  66 0026 C260     		str	r2, [r0, #12]
+  28:Core/Src/timer.c ****   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  67              		.loc 1 28 3 is_stmt 1 view .LVU13
+  68              		.loc 1 28 28 is_stmt 0 view .LVU14
+  69 0028 0361     		str	r3, [r0, #16]
+  29:Core/Src/timer.c ****   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  70              		.loc 1 29 3 is_stmt 1 view .LVU15
+  71              		.loc 1 29 32 is_stmt 0 view .LVU16
+  72 002a 8361     		str	r3, [r0, #24]
+  30:Core/Src/timer.c ****   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  73              		.loc 1 30 3 is_stmt 1 view .LVU17
+  74              		.loc 1 30 7 is_stmt 0 view .LVU18
+  75 002c FFF7FEFF 		bl	HAL_TIM_Base_Init
+  76              	.LVL0:
+  77              		.loc 1 30 6 view .LVU19
+  78 0030 90B9     		cbnz	r0, .L6
+  79              	.L2:
+  31:Core/Src/timer.c ****   {
+  32:Core/Src/timer.c ****     Error_Handler();
+  33:Core/Src/timer.c ****   }
+  34:Core/Src/timer.c ****   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  80              		.loc 1 34 3 is_stmt 1 view .LVU20
+  81              		.loc 1 34 34 is_stmt 0 view .LVU21
+ARM GAS  C:\Users\hh\AppData\Local\Temp\ccjNC21n.s 			page 3
+
+
+  82 0032 4FF48053 		mov	r3, #4096
+  83 0036 0293     		str	r3, [sp, #8]
+  35:Core/Src/timer.c ****   if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  84              		.loc 1 35 3 is_stmt 1 view .LVU22
+  85              		.loc 1 35 7 is_stmt 0 view .LVU23
+  86 0038 02A9     		add	r1, sp, #8
+  87 003a 0C48     		ldr	r0, .L9
+  88 003c FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
+  89              	.LVL1:
+  90              		.loc 1 35 6 view .LVU24
+  91 0040 68B9     		cbnz	r0, .L7
+  92              	.L3:
+  36:Core/Src/timer.c ****   {
+  37:Core/Src/timer.c ****     Error_Handler();
+  38:Core/Src/timer.c ****   }
+  39:Core/Src/timer.c ****   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  93              		.loc 1 39 3 is_stmt 1 view .LVU25
+  94              		.loc 1 39 37 is_stmt 0 view .LVU26
+  95 0042 0023     		movs	r3, #0
+  96 0044 0093     		str	r3, [sp]
+  40:Core/Src/timer.c ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  97              		.loc 1 40 3 is_stmt 1 view .LVU27
+  98              		.loc 1 40 33 is_stmt 0 view .LVU28
+  99 0046 0193     		str	r3, [sp, #4]
+  41:Core/Src/timer.c ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+ 100              		.loc 1 41 3 is_stmt 1 view .LVU29
+ 101              		.loc 1 41 7 is_stmt 0 view .LVU30
+ 102 0048 6946     		mov	r1, sp
+ 103 004a 0848     		ldr	r0, .L9
+ 104 004c FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
+ 105              	.LVL2:
+ 106              		.loc 1 41 6 view .LVU31
+ 107 0050 40B9     		cbnz	r0, .L8
+ 108              	.L1:
+  42:Core/Src/timer.c ****   {
+  43:Core/Src/timer.c ****     Error_Handler();
+  44:Core/Src/timer.c ****   }
+  45:Core/Src/timer.c ****   /* USER CODE BEGIN TIM2_Init 2 */
+  46:Core/Src/timer.c **** 
+  47:Core/Src/timer.c ****   /* USER CODE END TIM2_Init 2 */
+  48:Core/Src/timer.c **** 
+  49:Core/Src/timer.c **** }...
+ 109              		.loc 1 49 1 view .LVU32
+ 110 0052 07B0     		add	sp, sp, #28
+ 111              	.LCFI2:
+ 112              		.cfi_remember_state
+ 113              		.cfi_def_cfa_offset 4
+ 114              		@ sp needed
+ 115 0054 5DF804FB 		ldr	pc, [sp], #4
+ 116              	.L6:
+ 117              	.LCFI3:
+ 118              		.cfi_restore_state
+  32:Core/Src/timer.c ****     Error_Handler();
+ 119              		.loc 1 32 5 is_stmt 1 view .LVU33
+ 120 0058 FFF7FEFF 		bl	Error_Handler
+ 121              	.LVL3:
+ 122 005c E9E7     		b	.L2
+ARM GAS  C:\Users\hh\AppData\Local\Temp\ccjNC21n.s 			page 4
+
+
+ 123              	.L7:
+  37:Core/Src/timer.c ****     Error_Handler();
+ 124              		.loc 1 37 5 view .LVU34
+ 125 005e FFF7FEFF 		bl	Error_Handler
+ 126              	.LVL4:
+ 127 0062 EEE7     		b	.L3
+ 128              	.L8:
+  43:Core/Src/timer.c ****     Error_Handler();
+ 129              		.loc 1 43 5 view .LVU35
+ 130 0064 FFF7FEFF 		bl	Error_Handler
+ 131              	.LVL5:
+ 132              		.loc 1 49 1 is_stmt 0 view .LVU36
+ 133 0068 F3E7     		b	.L1
+ 134              	.L10:
+ 135 006a 00BF     		.align	2
+ 136              	.L9:
+ 137 006c 00000000 		.word	.LANCHOR0
+ 138              		.cfi_endproc
+ 139              	.LFE130:
+ 141              		.global	htim2
+ 142              		.section	.bss.htim2,"aw",%nobits
+ 143              		.align	2
+ 144              		.set	.LANCHOR0,. + 0
+ 147              	htim2:
+ 148 0000 00000000 		.space	72
+ 148      00000000 
+ 148      00000000 
+ 148      00000000 
+ 148      00000000 
+ 149              		.text
+ 150              	.Letext0:
+ 151              		.file 2 "d:\\gun arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\machine\\_default_typ
+ 152              		.file 3 "d:\\gun arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 153              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h"
+ 154              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 155              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 156              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 157              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"
+ 158              		.file 9 "Core/Inc/main.h"
+ARM GAS  C:\Users\hh\AppData\Local\Temp\ccjNC21n.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 timer.c
+C:\Users\hh\AppData\Local\Temp\ccjNC21n.s:20     .text.MX_TIM2_Init:00000000 $t
+C:\Users\hh\AppData\Local\Temp\ccjNC21n.s:26     .text.MX_TIM2_Init:00000000 MX_TIM2_Init
+C:\Users\hh\AppData\Local\Temp\ccjNC21n.s:137    .text.MX_TIM2_Init:0000006c $d
+C:\Users\hh\AppData\Local\Temp\ccjNC21n.s:147    .bss.htim2:00000000 htim2
+C:\Users\hh\AppData\Local\Temp\ccjNC21n.s:143    .bss.htim2:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_TIM_Base_Init
+HAL_TIM_ConfigClockSource
+HAL_TIMEx_MasterConfigSynchronization
+Error_Handler

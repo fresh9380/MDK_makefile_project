@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "sysclock.h": "c",
+        "main.h": "c"
+    }
+}
